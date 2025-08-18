@@ -1,13 +1,22 @@
-import React ,{useState} from 'react'
-import './InputForm.css'
+import React, { useState } from "react";
+import "./InputForm.css";
 
-export default function InputForm() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+export default function InputForm({ setNotes }) {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+    const notes = {
+      id: Date.now(),
+      title: title,
+      content: content,
+    };
+
+    setNotes((prevNotes) => [...prevNotes, notes]);
+    setTitle("");
+    setContent("");
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -23,6 +32,6 @@ export default function InputForm() {
         onChange={(e) => setContent(e.target.value)}
       />
       <button type="submit">Add Note</button>
-    </form> 
-  )
+    </form>
+  );
 }

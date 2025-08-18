@@ -8,7 +8,7 @@ export default function NoteItem(props) {
       <div className='note-content'>
         <h2>{title}</h2>
         <p>{content}</p>
-      </div>x
+      </div>
       <div className='controls'>
         <button>✏️</button>
         <button>❌</button>
