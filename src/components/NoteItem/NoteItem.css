@@ -1,0 +1,41 @@
+.note-item {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  box-shadow: #e8d5d1 2px 2px 5px;
+  transition: all 0.3s ease;
+}
+
+.note-item:hover {
+  box-shadow: #e8d5d1 4px 4px 10px;
+  transform: scale(1.02);
+}
+
+.note-content {
+  flex-grow: 1;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 20%;
+}
+
+button{
+    border-radius: 50%;
+    padding: 5px 10px;
+    height: 50px;
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e8d5d1;
+    transform: scale(1.1);
+}
