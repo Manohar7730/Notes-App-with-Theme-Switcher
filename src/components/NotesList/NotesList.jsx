@@ -9,13 +9,22 @@ export default function NotesList({ notes, setNotes }) {
   };
 
   const handleUpdate = (id, updatedTitle, updatedContent) => {
-    setNotes(
+    if(updatedTitle.trim()===""&&updatedContent.trim()===""){
+      alert("title and content cannot be empty")
+    }else if(updatedTitle.trim()===""){
+      alert("title cannot be empty")
+    }else if(updatedContent.trim()===""){
+      alert("content cannot be empty")
+    }else{
+      setNotes(
       notes.map((note) =>
         note.id === id
           ? { ...note, title: updatedTitle || note.title, content: updatedContent || note.content }
           : note
       )
     );
+    }
+    
   };
 
   return (

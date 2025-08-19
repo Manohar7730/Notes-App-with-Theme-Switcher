@@ -1,31 +1,30 @@
 #header {
   width: 100%;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
-  top: 0;
-  justify-content: space-evenly;
-  padding: 10px 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--text);
+  justify-content: space-between;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--accent);
 }
 
 #header h1 {
-  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
 #header button {
+    color: var(--text);
   background-color: transparent;
-  width: 20%;
-  height: auto;
-  border: none;
-  padding: 5px;
+  border: 1px solid var(--accent);
+  padding: 8px 16px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
-  color: inherit;
-  transition: all 0.3s ease-in-out;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 #header button:hover {
-  border: 1px solid currentColor;
-  transform: scale(1.2);
-  border-radius: 10px;
+  transform: scale(1.05);
 }

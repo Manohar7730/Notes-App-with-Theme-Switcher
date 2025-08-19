@@ -1,50 +1,47 @@
 .note-item {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: #e8d5d1 2px 2px 5px;
-  transition: all 0.3s ease;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background-color: var(--primary);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+    color: var(--text);
+    overflow-wrap: anywhere;
+
 }
 
 .note-item:hover {
-  box-shadow: #e8d5d1 4px 4px 10px;
   transform: scale(1.02);
 }
 
-.note-content {
-  flex-grow: 1;
+.note-content h2 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
 }
 
 .controls {
   display: flex;
-  justify-content: space-evenly;
-  gap: 10px;
-  width: 20%;
+  gap: 8px;
 }
 
-button{
-    border-radius: 50%;
-    padding: 5px 10px;
-    height: 50px;
-    border: none;
-    width: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.controls button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-button:hover {
-    background-color: #e8d5d1;
-    transform: scale(1.1);
+.controls button:hover {
+  transform: scale(1.1);
+  background-color: var(--accent);
 }
 
 .update-content{
   width: 80%;
-}
-
-.update-content form{
-  width: 100%;
 }

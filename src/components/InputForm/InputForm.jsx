@@ -7,15 +7,22 @@ export default function InputForm({ setNotes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const notes = {
-      id: Date.now(),
-      title: title,
-      content: content,
-    };
-
-    setNotes((prevNotes) => [...prevNotes, notes]);
-    setTitle("");
-    setContent("");
+    if (title.trim() === "" && content.trim() === "") {
+      alert("title and content cannot be empty");
+    } else if (title.trim() === "") {
+      alert("title cannot be empty");
+    } else if (content.trim() === "") {
+      alert("content cannot be empty");
+    } else {
+      const notes = {
+        id: Date.now(),
+        title: title,
+        content: content,
+      };
+      setNotes((prevNotes) => [...prevNotes, notes]);
+      setTitle("");
+      setContent("");
+    }
   };
 
   return (
