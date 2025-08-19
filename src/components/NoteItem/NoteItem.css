@@ -4,6 +4,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
+  align-items: center;
   gap: 10px;
   box-shadow: #e8d5d1 2px 2px 5px;
   transition: all 0.3s ease;
@@ -38,4 +39,12 @@ button{
 button:hover {
     background-color: #e8d5d1;
     transform: scale(1.1);
+}
+
+.update-content{
+  width: 80%;
+}
+
+.update-content form{
+  width: 100%;
 }
