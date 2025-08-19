@@ -1,28 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./InputForm.css";
 
 export default function InputForm({ setNotes }) {
-  const [title, setTitle] = useState("");
+  const titleRef = useRef(null); // ref for the input element
   const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() === "" && content.trim() === "") {
-      alert("title and content cannot be empty");
-    } else if (title.trim() === "") {
-      alert("title cannot be empty");
-    } else if (content.trim() === "") {
-      alert("content cannot be empty");
-    } else {
-      const notes = {
-        id: Date.now(),
-        title: title,
-        content: content,
-      };
-      setNotes((prevNotes) => [...prevNotes, notes]);
-      setTitle("");
-      setContent("");
+
+    const titleValue = titleRef.current.value.trim();
+    const contentValue = content.trim();
+
+    if (titleValue === "" && contentValue === "") {
+      alert("Title and content cannot be empty");
+      return;
     }
+    if (titleValue === "") {
+      alert("Title cannot be empty");
+      return;
+    }
+    if (contentValue === "") {
+      alert("Content cannot be empty");
+      return;
+    }
+
+    const note = {
+      id: Date.now(),
+      title: titleValue,
+      content: contentValue,
+    };
+console.log(note);
+
+    setNotes((prevNotes) => [...prevNotes, note]);
+
+    // clear inputs
+    titleRef.current.value = "";
+    setContent("");
+
+    // refocus title input
+    titleRef.current.focus();
   };
 
   return (
@@ -30,8 +46,7 @@ export default function InputForm({ setNotes }) {
       <input
         type="text"
         placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        ref={titleRef} // ✅ ref points to the DOM element
       />
       <textarea
         placeholder="Content"
