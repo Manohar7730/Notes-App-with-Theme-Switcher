@@ -65,6 +65,11 @@ src/
 
 ---
 
+## Screenshots
+
+<img width="1570" height="876" alt="Screenshot 2025-08-19 160524" src="https://github.com/user-attachments/assets/5e6dabfd-2bdc-440b-9502-e165ffdff45f" />
+
+
 ## 🌟 Learning Outcomes
 - Manage state & side effects with useState and useEffect
 - Avoid prop drilling with useContext
