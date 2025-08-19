@@ -1,26 +1,13 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 import { ThemeContext } from "./ThemeContext";
+import { useLocalStorage } from "../localStorage";
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
-
-  // load theme
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-  }, []);
-
-  // save theme
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const [theme, setTheme] = useLocalStorage("theme", "light");
 
   const handleTheme = () => {
-    setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
 
   return (
     <ThemeContext.Provider value={{ theme, handleTheme }}>
