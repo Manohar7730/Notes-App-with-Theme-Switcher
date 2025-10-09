@@ -24,10 +24,6 @@ This project is part of my **React Learning Journey (Stage 2 – Intermediate Ho
 
 ---
 
-## 📸 Preview
-
-*(You can add screenshots or a short GIF of your app running here)*  
-
 ---
 
 ## 📂 Project Structure
